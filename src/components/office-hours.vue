@@ -1,23 +1,45 @@
 <template>
   <div class="office-hours">
-    <div class="schedule">Every other <span class="day">{{ hours.day }}</span></div>
-    <div class="times"><span class="time">{{ hours.time.from }}</span> - <span class="time">{{ hours.time.to }}</span></div>
-    <div class="next">Next: <span class="date">{{ hours.date }}</span></div>
+    <h2>Office Hours</h2>
+    <div class="container">
+      <div class="schedule">Every other <span class="day">{{ config[index].day }}</span></div>
+      <div class="times"><span class="time">{{ config[index].time.from }}</span> - <span class="time">{{ config[0].time.to }}</span></div>
+      <div class="next">Next: <span class="date">{{ config[index].date }}</span></div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'office-hours',
-  props: ['hours'],
+  props: ['index'],
   data () {
-    return {}
+    return {
+      config : [
+        {
+          day: "Monday",
+          time: {
+            "from": "9am",
+            "to": "3pm"
+          },
+          date: "April 17th"
+        },
+        {
+          day: "Friday",
+          time: {
+            "from": "9am",
+            "to": "1:30pm"
+          },
+          date: "April 14th"
+        }
+      ]
+    }
   }
 }
 </script>
 
 <style lang="scss">
-.office-hours {
+.container {
   width: 100%;
   min-height: 500px;
   padding-right: 16px;

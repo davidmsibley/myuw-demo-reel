@@ -1,6 +1,6 @@
 <template>
   <div class="app-header">
-    <a href="https://my.wisc.edu" aria-label="go to my u w">
+    <a href="#/" aria-label="go to home">
       <img src="../assets/img/uw-crest.png" alt="uw crest link">
       <h1>MyUW <span>Developer</span></h1>
     </a>

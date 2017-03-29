@@ -1,13 +1,30 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
+import Landing from './components/landing.vue'
+import OfficeHours from './components/office-hours.vue'
 
-// Use vue-resource for http methods
-Vue.use(require('vue-resource'));
-Vue.http.options.root = '/';
+Vue.use(VueRouter);
+
+const routes = [
+  {
+    'path': '/',
+    'component': Landing
+  },
+  {
+    'path': '/office-hours/:index',
+    'component': OfficeHours,
+    'props': true
+  }
+]
+
+const router = new VueRouter({
+  routes
+})
 
 // Initialize app
 new Vue({
   el: '#app',
+  router,
   render: h => h(App)
 })

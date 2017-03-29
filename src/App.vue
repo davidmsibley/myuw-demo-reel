@@ -1,40 +1,19 @@
 <template>
   <div id="app">
     <app-header></app-header>
-    <h2>Office Hours</h2>
-    <office-hours :hours="config[0]"></office-hours>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 // Get child components
 import AppHeader from './components/app-header.vue'
-import OfficeHours from './components/office-hours.vue'
 
 export default {
-  components: { AppHeader, OfficeHours },
+  components: { AppHeader },
   name: 'app',
   data () {
-    return {
-      config : [
-        {
-          day: "Monday",
-          time: {
-            "from": "9am",
-            "to": "3pm"
-          },
-          date: "April 17th"
-        },
-        {
-          day: "Friday",
-          time: {
-            "from": "9am",
-            "to": "1:30pm"
-          },
-          date: "April 14th"
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>
